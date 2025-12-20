@@ -74,15 +74,13 @@
                                                 font-family:Arial ;
                                                 text-align: center;">experiences that help brands to grow and stand out online. </p>
 
-                                                <p>
-                                                                  <p>
-                                                  <marquee behavior="scroll" direction="right" scrollamount="9" style="color: beige;
+                                                <marquee behavior="scroll" direction="right" scrollamount="9" style="color: beige;
                                                                         font-size: 20px;
                                                                         font-style:Arial;
                                                                         margin-left: 0px;
                                                                         margin-right: 20px;
 
-                                                                        ">➥web development • web design • UI/UX design • MongoDB • Figma to Code • Portfolio Websites • Landing Pages ↩</marquee></p>
+                                                                        ">➥web development • web design • UI/UX design • MongoDB • Figma to Code • Portfolio Websites • Landing Pages ↩</marquee>
   </div> 
 
   
@@ -92,6 +90,7 @@
     body {
   margin: 0;
   background-color: #0f0f0f; /* dark background */
+  font-family: system-ui, sans-serif;
 }
 
 html {
@@ -119,12 +118,6 @@ html {
 
 
 
-    body {
-  margin: 0;
-  background-color: rgb(0, 0, 0);
-  font-family: system-ui, sans-serif;
-}
-
 /* ===== FLOATING NAV CONTAINER ===== */
 #nav {
   position: sticky;
@@ -139,12 +132,11 @@ nav {
   display: flex;
   align-items: center;
   height: 65px;          /* ✅ FIXED HEIGHT */
-  padding: 0 40px;      /* remove vertical padding */
+  padding: 0 40px 0 20px; 
   background: rgba(78, 76, 76, 0.058);
   backdrop-filter: blur(40px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.193);
-  padding: 0 40px 0 20px; 
 }
 
 
@@ -212,6 +204,27 @@ nav a:hover {
 
 #first{
     margin-top: 36px;   
+}
+
+/* Mobile responsiveness for headings and text */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h2 marquee {
+    font-size: 30px;
+  }
+  p {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+  }
+  marquee {
+    font-size: 16px;
+  }
 }
 
 
