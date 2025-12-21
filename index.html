@@ -21,7 +21,7 @@
    
 
 
-   <h1 style="color: beige;
+   <h1 style="color: rgb(212, 227, 245);
                text-align: center;
                font-size: 60px;
                font-family: Verdana, Geneva, Tahoma, sans-serif;"> WebLet Welcomes You</h1>
@@ -35,7 +35,7 @@
                           margin-bottom:20px;">Modern • Responsive • High-Performance Websites for Businesses & Brands.</h3>
 
                             <h2>
-    <marquee behavior="scroll" direction="left" scrollamount="17" style="color: beige;
+    <marquee behavior="scroll" direction="left" scrollamount="17" style="color: rgb(229, 241, 255);
                                                                         font-size: 45px;
                                                                         font-style:Verdana, Geneva, Tahoma, sans-serif;
                                                                         ">
@@ -45,14 +45,14 @@
 
                    
                           <br>
-                          <p style="color: #c1c1c1a2;
+                          <p style="color: #d3e4fe7a;
                           padding-left:100px;
                           padding-right: 100px;
                           font-size: 20px;
                           font-family:Arial ;
                           text-align: center;;">➥ This website delivers professional web development and design solutions 
                                                tailored for businesses and individuals.</p>
-                                               <p style="color: #c1c1c1a2;
+                                               <p style="color: #d3e4fe7a;
                                                text-align:center;
                                                 padding-left:100px;
                                                 padding-right: 100px;
@@ -66,7 +66,7 @@
 
                                                </p>
 
-                                               <p style="color: #c1c1c1a2;
+                                               <p style="color: #d3e4fe7a;
                                                text-align:center;
                                                 padding-left:100px;
                                                 padding-right: 100px;
@@ -74,13 +74,21 @@
                                                 font-family:Arial ;
                                                 text-align: center;">experiences that help brands to grow and stand out online. </p>
 
-                                                <marquee behavior="scroll" direction="right" scrollamount="9" style="color: beige;
+                                                <marquee behavior="scroll" direction="right" scrollamount="9" style="color: rgb(229, 241, 255);
                                                                         font-size: 20px;
                                                                         font-style:Arial;
                                                                         margin-left: 0px;
                                                                         margin-right: 20px;
 
                                                                         ">➥web development • web design • UI/UX design • MongoDB • Figma to Code • Portfolio Websites • Landing Pages ↩</marquee>
+
+                                                                        <div>
+                                                                          <h1 style="color: beige;
+                                                                          margin-top:150px;
+                                                                          ;">
+                                                                            About WebLet
+                                                                          </h1>
+                                                                        </div>
   </div> 
 
   
@@ -99,17 +107,17 @@ html {
  
 
 .grid-bg {
-  min-height: 100vh;
+  min-height: 10vh;
 
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.103) 0.01px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.08) 0.01px, transparent 1px);
+    linear-gradient(rgba(11, 11, 11, 0.056) 0.05px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 0.05px, transparent 1px);
 
-  background-size: 3px 3px; /* grid size */
+  background-size: 35px 35px; /* grid size */
 }
 .hero {
   background:
-    linear-gradient(to bottom,rgba(0, 99, 156, 0.259),transparent 60%),rgb(0, 0, 0);
+    linear-gradient(to bottom,rgba(1, 54, 114, 0.548),transparent 60%),rgb(0, 0, 0);
 }
 
 
@@ -175,3 +183,76 @@ nav a:hover {
     gap: 5px;
     min-width: fit-content;
   }
+
+  nav a {
+    font-size: 12px;
+    padding: 8px 12px;
+    
+  }
+}
+#home{
+    margin-left: 15px;
+    font-size: medium;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+   }
+
+#service{
+    margin-left: 20px;
+    font-size: medium;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+#contact{
+    margin-left: 20px;
+    font-size: medium;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+
+#first{
+    margin-top: 36px;   
+}
+
+/* Mobile responsiveness for headings and text */
+/* ===== CONTENT MOBILE FIX (NAV UNTOUCHED) ===== */
+@media (max-width: 768px) {
+  #nav{
+    margin-top:auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  h1 {
+    font-size: 38px !important;
+    padding: 0 12px;
+  }
+
+  h3 {
+    font-size: 24px !important;
+    padding: 0 12px;
+  }
+
+  h2 marquee {
+    font-size: 26px !important;
+  }
+
+  p {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    font-size: 16px !important;
+  }
+
+  marquee {
+    font-size: 16px !important;
+  }
+}
+
+
+
+   </style>
+
+</body>
+</html>
