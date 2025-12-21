@@ -1,258 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebLet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebLet</title>
 </head>
+
 <body>
-  <section class="hero">
-    
 
+<section class="hero">
   <div class="grid-bg">
-      <div id="nav">
-   <nav >
-            <span id="logo">WebLet</span>
-            <a id="home"     href="dashboard.html">About</a>
-            <a  id="service"  href="services.html">Services</a>
-            <a  id="contact"  href="contact.html">Contact</a>
-   </nav>
-   </div>
-   
 
+    <!-- NAV BAR -->
+    <div id="nav">
+      <nav>
+        <span id="logo">WebLet</span>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>  
 
-   <h1 style="color: rgb(212, 227, 245);
-               text-align: center;
-               font-size: 60px;
-               font-family: Verdana, Geneva, Tahoma, sans-serif;"> WebLet Welcomes You</h1>
+    <!-- HERO CONTENT -->
+    <h1 class="hero-title">WebLet Welcomes You</h1>
 
+    <h3 class="hero-sub">
+      Modern • Responsive • High-Performance Websites for Businesses & Brands.
+    </h3>
 
+    <h2 class="hero-marquee">
+      <marquee behavior="scroll" direction="left" scrollamount="12">
+        Crafting Stunning Websites to Elevate Your Online Presence!
+      </marquee>
+    </h2>
 
+    <div id="para">
+      <p>➥ This website delivers professional web development and design solutions tailored for businesses and individuals.</p>
+      <p>➥ Every project focuses on modern design, responsive layouts, and high performance across all devices.</p>
+      <p>➥ Experiences that help brands grow and stand out online.</p>
+    </div>
 
-               <h3 style="color: #4da7f6e0;
-                          font-size: 45px;  
-                          text-align: center;
-                          margin-bottom:20px;">Modern • Responsive • High-Performance Websites for Businesses & Brands.</h3>
+    <div id="marquees">
+      <marquee behavior="scroll" direction="right" scrollamount="6">
+        • responsive design • Figma to Code • Landing Pages
+      </marquee>
+      <marquee behavior="scroll" direction="left" scrollamount="6">
+        • web development • web design • UI/UX Design
+      </marquee>
+    </div>
 
-                            <h2>
-    <marquee behavior="scroll" direction="left" scrollamount="17" style="color: rgb(229, 241, 255);
-                                                                        font-size: 45px;
-                                                                        font-style:Verdana, Geneva, Tahoma, sans-serif;
-                                                                        ">
-          Crafting Stunning Websites to Elevate Your Online Presence!
-    </marquee>
-</h2>
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About WebLet</h2>
 
-                   
-                          <br>
-                          <p style="color: #d3e4fe7a;
-                          padding-left:100px;
-                          padding-right: 100px;
-                          font-size: 20px;
-                          font-family:Arial ;
-                          text-align: center;;">➥ This website delivers professional web development and design solutions 
-                                               tailored for businesses and individuals.</p>
-                                               <p style="color: #d3e4fe7a;
-                                               text-align:center;
-                                                padding-left:100px;
-                                                padding-right: 100px;
-                                                font-size: 20px;
-                                                font-family:Arial ;
-                                                text-align: center;
-                                                
-                                               
-                                               ">➥ Every project focuses on modern design, responsive layouts, and high performance across all devices.
-                                               The goal is to create reliable digital-
+      <p>
+        <strong>WebLet</strong> is a modern web development studio focused on building
+        <span class="highlight">fast, responsive, and visually striking websites</span>
+        for businesses, brands, and creators.
+      </p>
 
-                                               </p>
+      <p>
+        We believe a website is more than just an online presence — it is a
+        <span class="highlight">digital experience</span> that represents your brand’s
+        identity, values, and vision.
+      </p>
 
-                                               <p style="color: #d3e4fe7a;
-                                               text-align:center;
-                                                padding-left:100px;
-                                                padding-right: 100px;
-                                                font-size: 20px;
-                                                font-family:Arial ;
-                                                text-align: center;">experiences that help brands to grow and stand out online. </p>
+      <p>
+        At WebLet, every project is crafted with attention to detail, clean design,
+        smooth interactions, and performance-first development.
+      </p>
 
-                                                <marquee behavior="scroll" direction="right" scrollamount="9" style="color: rgb(229, 241, 255);
-                                                                        font-size: 20px;
-                                                                        font-style:Arial;
-                                                                        margin-left: 0px;
-                                                                        margin-right: 20px;
+      <div class="about-grid">
+        <div class="about-card">⚡ High Performance</div>
+        <div class="about-card">📱 Fully Responsive</div>
+        <div class="about-card">🎨 Modern UI / UX</div>
+        <div class="about-card">🚀 Scalable Solutions</div>
+      </div>
 
-                                                                        ">➥web development • web design • UI/UX design • MongoDB • Figma to Code • Portfolio Websites • Landing Pages ↩</marquee>
+      <p class="about-end">
+        Our goal is to help brands <span class="highlight">stand out, grow, and succeed online</span>.
+      </p>
+    </section>
 
-                                                                        <div>
-                                                                          <h1 style="color: beige;
-                                                                          margin-top:150px;
-                                                                          ;">
-                                                                            About WebLet
-                                                                          </h1>
-                                                                        </div>
-  </div> 
+  </div>
+</section>
 
-  
-   
-   <style>
-    
-    body {
+<style>
+/* ============ BASE ============ */
+body {
   margin: 0;
-  background-color: #0f0f0f; /* dark background */
+  background-color: #0f0f0f;
   font-family: system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
- 
+html { scroll-behavior: smooth; }
 
-.grid-bg {
-  min-height: 10vh;
+.grid-bg { min-height: 300vh; }
 
-  background-image:
-    linear-gradient(rgba(11, 11, 11, 0.056) 0.05px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.08) 0.05px, transparent 1px);
-
-  background-size: 35px 35px; /* grid size */
-}
+/* ============ HERO ============ */
 .hero {
-  background:
-    linear-gradient(to bottom,rgba(1, 54, 114, 0.548),transparent 60%),rgb(0, 0, 0);
+  background: linear-gradient(to bottom, rgba(1,33,90,.45), transparent 30%), #000;
 }
 
+/* Titles */
+.hero-title {
+  text-align: center;
+  font-size: clamp(34px, 6vw, 70px);
+  color: rgb(212,227,245);
+  font-family: Verdana;
+  text-shadow: 0 5px 500px #fdfeff;
+  margin: 0 10px;
+}
 
+.hero-sub {
+  text-align: center;
+  font-size: clamp(20px, 4vw, 60px);
+  color: #4da7f6e0;
+  font-family: Verdana;
+  text-shadow: 0 5px 500px #92b2c6;
+  margin: 20px 10px;
+}
 
+.hero-marquee marquee {
+  font-size: clamp(22px, 4vw, 60px);
+  color: #e5f1ff;
+}
 
+/* Paragraphs */
+#para p {
+  text-align: center;
+  font-size: clamp(15px, 2.5vw, 25px);
+  padding: 0 20px;
+  color: #d3e4fe7a;
+}
 
+/* Marquees */
+#marquees {
+  margin-top: 30px;
+  padding: 0 20px;
+}
 
+#marquees marquee {
+  font-size: clamp(14px, 2.5vw, 22px);
+  color: #e5f1ff;
+}
 
-/* ===== FLOATING NAV CONTAINER ===== */
+/* ============ NAV ============ */
 #nav {
   position: sticky;
-  top: 25px;                 /* floating gap like image */
+  top: 25px;
   z-index: 100;
   display: flex;
-  justify-content: center;   /* CENTER the pill */ /* space around the nav */
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
-/* ===== PILL NAV ===== */
 nav {
   display: flex;
   align-items: center;
-  height: 65px;          /* ✅ FIXED HEIGHT */
-  padding: 0 40px 0 20px; 
-  background: rgba(78, 76, 76, 0.058);
-  backdrop-filter: blur(40px);
+  height: 65px;
+  padding: 0 40px 0 20px;
+  background: rgba(68,68,68,.08);
+  backdrop-filter: blur(25px);
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.193);
+  border: 1px solid rgba(255,255,255,.2);
 }
 
-
-/* ===== LOGO ===== */
 #logo {
-  font-size: 25px;      /* change freely */
-  font-weight: 600;
+  font-size: 25px;
   color: #3eaaf8;
-  margin-right: 20px;
-  line-height: 1;  
-  text-align: left; 
-  font-variant-position: normal;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  
-  
+  font-weight: 700;
 }
 
-
-/* ===== LINKS ===== */
 nav a {
   text-decoration: none;
-  color: #e9eef387;
-  font-size: 10px;
-  border-radius: 9px;
-  transition: background 0.2s ease, color 0.2s ease;
+  color: #c8e4ff87;
+  font-family: Verdana;
+  padding: auto;  margin-left: 30px;
+  font-size: clamp(14px, 2.5vw, 12px);
 }
 
-/* hover like modern UI */
-nav a:hover {
-  color: rgb(60, 113, 144);
+/* ============ ABOUT ============ */
+#about {
+  margin-top: 120px;
+  padding: 0 20px;
+  text-align: center;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  nav {
-    gap: 5px;
-    min-width: fit-content;
-  }
-
-  nav a {
-    font-size: 12px;
-    padding: 8px 12px;
-    
-  }
-}
-#home{
-    margin-left: 15px;
-    font-size: medium;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
-   }
-
-#service{
-    margin-left: 20px;
-    font-size: medium;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
-}
-#contact{
-    margin-left: 20px;
-    font-size: medium;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
+#about h2 {
+  font-size: clamp(28px, 5vw, 48px);
+  color: #e5f1ff;
+  margin-bottom: 30px;
 }
 
-#first{
-    margin-top: 36px;   
+#about p {
+  font-size: clamp(15px, 2.5vw, 22px);
+  color: #d3e4fe7a;
+  line-height: 1.8;
 }
 
-/* Mobile responsiveness for headings and text */
-/* ===== CONTENT MOBILE FIX (NAV UNTOUCHED) ===== */
-@media (max-width: 768px) {
-  #nav{
-    margin-top:auto;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    
-  }
+.highlight { color: #e5f1ff; }
 
-  h1 {
-    font-size: 38px !important;
-    padding: 0 12px;
-  }
-
-  h3 {
-    font-size: 24px !important;
-    padding: 0 12px;
-  }
-
-  h2 marquee {
-    font-size: 26px !important;
-  }
-
-  p {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    font-size: 16px !important;
-  }
-
-  marquee {
-    font-size: 16px !important;
-  }
+.about-grid {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
 }
 
+.about-card {
+  padding: 20px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.15);
+  color: #e5f1ff;
+}
 
-
-   </style>
+.about-end {
+  margin-top: 40px;
+}
+</style>
 
 </body>
 </html>
