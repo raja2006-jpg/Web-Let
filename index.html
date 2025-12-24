@@ -123,13 +123,86 @@
       <p class="about-end">
         Our goal is to help brands <span class="highlight">stand out, grow, and succeed online</span>.
       </p>
-    </section>
-    <section id="service">
+
+      <!-- services-->
+       <section id="services" class="services-section">
+
+        <div id="light"></div>
+  <div class="services-container">
+
+    <h2 class="services-title">Our Services</h2>
+    <p class="services-subtitle">
+      Professional digital solutions designed to deliver performance,
+      usability, and long-term value.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Web Development</h3>
+        <p>
+          Custom-built websites using modern technologies with focus on
+          speed, security, and scalability.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Web Design & UI/UX</h3>
+        <p>
+          Clean, modern, and user-focused designs that enhance usability
+          and strengthen brand identity.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Responsive Design</h3>
+        <p>
+          Websites optimized for seamless experience across mobile,
+          tablet, and desktop devices.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Figma to Code</h3>
+        <p>
+          Pixel-perfect conversion of Figma designs into clean,
+          responsive, and production-ready code.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Performance Optimization</h3>
+        <p>
+          Optimized structure and fast-loading pages for smooth user
+          interaction and better results.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Landing Pages</h3>
+        <p>
+          High-converting landing pages crafted to capture attention
+          and drive meaningful action.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+    <!--end of service-->
+
+
+
 
     </section>
+    
 
 
   </div>
+
+
+ 
 </section>
 
 
@@ -374,9 +447,9 @@ hr{
 .light-beam{
   position:absolute;
   top:-40%;
-  left:0.5%;
-  width:200px;
-  height:700px;
+  left:-5%;
+  width:250px;
+  height:600px;
 
   background: linear-gradient(
     to bottom right,
@@ -384,8 +457,8 @@ hr{
     transparent
   );
 
-  filter: blur(50px);
-  transform: rotate(-70deg);
+  filter: blur(65px);
+  transform: rotate(-45deg);
   z-index:0;
   pointer-events:none;
   
@@ -396,13 +469,13 @@ hr{
   position:absolute;
   top:65%;
   right:10%;
-  width:250px;
-  height:400px;
+  width:245px;
+  height:350px;
   
 
   background: linear-gradient(
     to bottom left,
-    rgba(254, 252, 255, 0.41),
+    rgba(246, 244, 247, 0.403),
     transparent
   );
 
@@ -429,6 +502,96 @@ hr{
 nav a:hover {
   color: #6997e1df;
 }
+
+
+
+
+/* ===== SERVICES SECTION ===== */
+.services-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ /* here lines are come  ======= /////*/
+
+  scroll-margin-top: 120px;
+}
+
+
+
+
+
+
+.services-container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 48px;
+  color: beige;
+  margin-bottom: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.services-subtitle {
+  font-size: 18px;
+  color: #c1c1c1a2;
+  margin-bottom: 60px;
+  font-family: Arial, sans-serif;
+}
+
+/* GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.service-card {
+  background: rgba(78, 76, 76, 0.06);
+  backdrop-filter: blur(25px);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(62, 170, 248, 0.6);
+}
+
+.service-card h3 {
+  font-size: 22px;
+  color: #3eaaf8;
+  margin-bottom: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #c1c1c1a2;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .services-title {
+    font-size: 34px;
+  }
+
+  .services-subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}
+
 
 
 
