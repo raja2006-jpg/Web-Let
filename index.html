@@ -1,437 +1,339 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebLet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebLet</title>
+
+<style>
+/* ============ BASE ============ */
+body{
+  margin:0;
+  background:#000;
+  font-family:system-ui,sans-serif;
+  overflow-x:hidden;
+}
+html{scroll-behavior:smooth}
+.grid-bg{min-height:500vh}
+
+/* ============ NAV ============ */
+#nav{
+  position:sticky;
+  top:20px;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+}
+nav{
+  display:flex;
+  align-items:center;
+  height:65px;
+  padding:0 40px 0 20px;
+  background:rgba(144,139,139,.1);
+  backdrop-filter:blur(35px);
+  border-radius:15px;
+  border:.5px solid rgba(255,255,255,.08);
+  transition:.3s;
+}
+#logo{
+  font-size:20px;
+  color:#5288de;
+  font-weight:700;
+  margin-right:10px;
+}
+nav a{
+  text-decoration:none;
+  color:#6c7480dc;
+  margin-left:20px;
+  font-size:14px;
+  font-weight:500;
+}
+nav a:hover{color:#6997e1df}
+
+/* ============ HERO ============ */
+.hero{padding:15px}
+.hero-title{
+  text-align:center;
+  font-size:clamp(34px,6vw,70px);
+  color:#eff6ff;
+  text-shadow:0 5px 500px #000;
+}
+.hero-marquee marquee{
+  font-size:clamp(22px,4vw,60px);
+  color:#e5f1ff;
+}
+#para p{
+  text-align:center;
+  font-size:17px;
+  color:#d3e4fe7a;
+}
+
+/* ============ ABOUT ============ */
+#about{
+  padding:40px 20px;
+  text-align:center;
+  position:relative;
+}
+#about h2{
+  font-size:clamp(28px,5vw,48px);
+  color:#e5f1ff;
+}
+#about p{
+  font-size:clamp(15px,2.5vw,22px);
+  color:#d3e4fe7a;
+  line-height:1.8;
+}
+.highlight{color:#e5f1ff}
+
+/* ABOUT GRID */
+.about-grid{
+  margin:50px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:25px;
+}
+.about-card{
+  padding:20px;
+  border-radius:14px;
+  background:#fffffe;
+  color:#000;
+  font-size:18px;
+  font-weight:700;
+}
+
+/* IMAGE SCROLLER */
+.image-wrapper{
+  margin:60px auto;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s;
+}
+.image-wrapper.active{
+  opacity:1;
+  transform:translateY(0);
+}
+.image-track{
+  display:flex;
+  gap:20px;
+  width:max-content;
+  animation:scroll 35s linear infinite;
+}
+.image-track img{
+  width:300px;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+}
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-20%)}
+}
+
+/* ============ SERVICES ============ */
+.services-section{
+  min-height:100vh;
+  padding:100px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.services-container{
+  max-width:1100px;
+  width:100%;
+  text-align:center;
+}
+.services-title{
+  font-size:48px;
+  color:beige;
+}
+.services-subtitle{
+  font-size:18px;
+  color:#c1c1c1a2;
+  margin-bottom:60px;
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+.service-card{
+  padding:25px;
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  color:#e5f1ff;
+}
+
+/* ============ CONTACT ============ */
+.contact-section{
+  padding:120px 20px;
+  text-align:center;
+}
+.contact-title{
+  font-size:42px;
+  color:#e5f1ff;
+}
+.contact-subtitle{
+  color:#b9c4d6;
+  margin-bottom:50px;
+}
+.contact-grid{
+  max-width:900px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.info-card{
+  background:rgba(255,255,255,.06);
+  padding:20px;
+  border-radius:14px;
+  color:#e5f1ff;
+}
+.contact-form{
+  margin-top:30px;
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  border-radius:10px;
+  border:none;
+}
+.submit-btn{
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  background:#5288de;
+  color:#fff;
+  cursor:pointer;
+}
+.submit-btn:hover{background:#3f6fd1}
+
+/* SOCIAL */
+.social-links{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+.social-link{
+  padding:10px 18px;
+  border-radius:30px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  color:#e5f1ff;
+  text-decoration:none;
+}
+.social-link:hover{background:#5288de}
+
+/* LIGHT BEAMS */
+.light-beam{
+  position:absolute;
+  top:-40%;
+  left:-5%;
+  width:250px;
+  height:600px;
+  background:linear-gradient(to bottom right,rgba(86,120,232,.6),transparent);
+  filter:blur(65px);
+  transform:rotate(-45deg);
+}
+.light-beams{
+  position:absolute;
+  top:65%;
+  right:10%;
+  width:245px;
+  height:350px;
+  background:linear-gradient(to bottom left,rgba(246,244,247,.4),transparent);
+  filter:blur(150px);
+}
+</style>
 </head>
 
 <body>
-  <div class="light-beam"></div>
-  <div class="light-beams"></div>
 
-  <section class="hero" id="home" style="padding-left: 10px; padding-right: 10px; padding-top: 1px;padding-bottom: 1px;">
-    
-    <div class="grid-bg">
+<div class="light-beam"></div>
+<div class="light-beams"></div>
 
-      <!-- NAV BAR -->
-      <div id="nav">
-        <nav>
-          <a href="#home" id="logo" class="nav-logo">WebLet</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-      </div>  
+<section class="hero" id="home">
+  <div class="grid-bg">
 
-      <!-- HERO CONTENT -->
-      <h4 style="color: rgb(255, 255, 255); text-align: center; position: absolute; top: 30px; left: 50%; transform: translateX(-50%);">
-        🔥build  🌐 websites with WebLet
-      </h4>
-      
-      <h1 class="hero-title">Where Code Meets Creativity</h1>
-
-      <h3 class="hero-sub" style="text-align: center; font-size: clamp(20px, 4vw, 60px); color: #a2c5f6e0; font-family: Verdana; text-shadow: 0 5px 500px #1c1c1dcd; margin: 20px 10px; padding-left: 52.5px; padding-right: 52.5px;">
-        Modern  Responsive  Websites  Businesses & Brands
-      </h3>
-
-      <div id="para">
-        <p>➥ This website delivers professional web development and design solutions tailored for businesses and individuals.</p>
-        <p>➥ Every project focuses on modern design, responsive layouts, and high performance across all devices.</p>
-        <p>➥ Experiences that help brands grow and stand out online.</p>
-      </div>
-
-      <div id="marquees" style="padding-left: 80px; padding-right: 80px;">
-        <marquee behavior="scroll" direction="right" scrollamount="6">
-          • responsive design • Figma to Code • Landing Pages
-        </marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="6">
-          • web development • web design • UI/UX Design
-        </marquee>
-      </div>
-
-      <h2 class="hero-marquee">
-        <marquee behavior="scroll" direction="left" scrollamount="12">
-          Crafting Stunning Websites to Elevate Your Online Presence!
-        </marquee>
-      </h2>
-      <div id="space" style="margin-top: 150px; margin-bottom: 100px;"></div>
-
-      <!-- ABOUT -->
-      <section id="about">
-        <h2 style="color: rgb(255, 255, 255); font-size: 40px; text-shadow:0px 3px 100px  #0458ab;">why <strong>WebLet</strong> ?</h2>
-
-        <p>
-          <strong>➥ WebLet</strong> is a modern web development studio focused on building
-          <span class="highlight">fast, responsive, and visually striking websites</span>
-          for businesses, brands, and creators.
-        </p>
-
-        <p>
-          ➥ We believe a website is more than just an online presence — it is a
-          <span class="highlight">digital experience</span> that represents your brand's
-          identity, values, and vision.
-        </p>
-
-        <p>
-          ➥ At <strong>WebLet</strong>, every project is crafted with attention to detail, clean design,
-          smooth interactions, and performance-first development.
-        </p>
-
-        <div class="image-wrapper" id="imageReveal">
-          <div class="image-track">
-            <img src="https://static.wixstatic.com/media/7543c9_8b5ef1eb5e884ef2bcd8742bca552b75~mv2.jpg/v1/fill/w_693,h_462,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/7543c9_8b5ef1eb5e884ef2bcd8742bca552b75~mv2.jpg">
-            <img src="https://evisionthemes.com/wp-content/uploads/edd/2017/11/bizplus-free-responsive.png">
-            <img src="https://img.freepik.com/premium-photo/dark-mode-ui-design-mobile-app_1179475-25350.jpg">
-            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/879478202903301.668e1baab3185.jpg">
-            <img src="https://tse3.mm.bing.net/th/id/OIP.oHPY03rIz307qjPxjt9r9gHaDg?cb=ucfimg2&ucfimg=1&w=1500&h=712&rs=1&pid=ImgDetMain&o=7&rm=3">
-            <img src="https://t3.ftcdn.net/jpg/01/82/47/42/360_F_182474233_m1sjfQgvY1HZbtAsYM89Fz0pUj3PO5u0.jpg">
-            <img src="https://evisionthemes.com/wp-content/uploads/edd/2017/11/bizplus-free-responsive.png">
-            <img src="https://img.freepik.com/premium-photo/dark-mode-ui-design-mobile-app_1179475-25350.jpg">
-            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/879478202903301.668e1baab3185.jpg">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.JaA1ysVmql5UMpn_pB8N8QHaJp?cb=ucfimg2&pid=ImgDet&ucfimg=1&w=184&h=239&c=7&dpr=1.3&o=7&rm=3">
-          </div>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card">⚡ High Performance</div>
-          <div class="about-card">📱 Fully Responsive</div>
-          <div class="about-card">🎨 Modern UI / UX</div>
-          <div class="about-card">🚀 Scalable Solutions</div>
-        </div>
-
-        <p class="about-end">
-          Our goal is to help brands <span class="highlight">stand out, grow, and succeed online</span>.
-        </p>
-      </section>
-
-      <!-- SERVICES -->
-      <section id="services" class="services-section">
-        <div id="light"></div>
-        <div id="lighta"></div>
-        <div id="lightb"></div>
-        <div id="lightc"></div>
-        <div id="lightd"></div>
-        
-        <div class="services-container">
-          <h2 class="services-title">Our Services</h2>
-          <p class="services-subtitle">
-            Professional digital solutions designed to deliver performance,
-            usability, and long-term value.
-          </p>
-
-          <div class="services-grid">
-            <div class="service-card">
-              <h3>Web Development</h3>
-              <p>
-                Custom-built websites using modern technologies with focus on
-                speed, security, and scalability.
-              </p>
-            </div>
-
-            <div class="service-card">
-              <h3>Web Design & UI/UX</h3>
-              <p>
-                Clean, modern, and user-focused designs that enhance usability
-                and strengthen brand identity.
-              </p>
-            </div>
-
-            <div class="service-card">
-              <h3>Responsive Design</h3>
-              <p>
-                Websites optimized for seamless experience across mobile,
-                tablet, and desktop devices.
-              </p>
-            </div>
-
-            <div class="service-card">
-              <h3>Figma to Code</h3>
-              <p>
-                Pixel-perfect conversion of Figma designs into clean,
-                responsive, and production-ready code.
-              </p>
-            </div>
-
-            <div class="service-card">
-              <h3>Performance Optimization</h3>
-              <p>
-                Optimized structure and fast-loading pages for smooth user
-                interaction and better results.
-              </p>
-            </div>
-
-            <div class="service-card">
-              <h3>Landing Pages</h3>
-              <p>
-                High-converting landing pages crafted to capture attention
-                and drive meaningful action.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT SECTION -->
-      <section id="contact" class="contact-section">
-        <div class="contact-container">
-          <h2 class="contact-title">Get In Touch</h2>
-          <p class="contact-subtitle">
-            Ready to start your project? Let's build something amazing together.
-          </p>
-
-          <div class="contact-grid">
-            <div class="contact-info">
-              <div class="info-card">
-                <div class="info-icon">📧</div>
-                <h3>Email</h3>
-                <p>rajasiddharthrajasiddharth@gmail.com</p>
-                
-              </div>
-
-              <div class="info-card">
-                <div class="info-icon">📱</div>
-                <h3>Phone</h3>
-                <p>+91 7397725568</p>
-                
-              </div>
-
-              <div class="info-card">
-                <div class="info-icon">📍</div>
-                <h3>Coimbatore</h3>
-                <p>Tamil Nadu</p>
-                <p>Remote Worldwide</p>
-              </div>
-
-              
-
-            <div class="contact-form">
-              <form id="contactForm">
-                <div class="form-group">
-                  <input type="text" id="name" placeholder="Your Name" required>
-                </div>
-
-                <div class="form-group">
-                  <input type="email" id="email" placeholder="Your Email" required>
-                </div>
-
-                <div class="form-group">
-                  <input type="text" id="subject" placeholder="Subject" required>
-                </div>
-
-                <div class="form-group">
-                  <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                  <span>Send Message</span>
-                  <div class="btn-icon">🚀</div>
-                </button>
-              </form>
-
-              <div class="form-note">
-                <p>We typically respond within 24 hours. Your information is secure with us.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <a href="#" class="social-link">LinkedIn</a>
-            <a href="#" class="social-link">GitHub</a>
-            <a href="#" class="social-link">Instagram</a>
-          </div>
-        </div>
-      </section>
-
+    <div id="nav">
+      <nav>
+        <a href="#home" id="logo">WebLet</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </section>
 
-  <script>
-    /* ========= NAVIGATION SCROLL ========= */
-    document.addEventListener('DOMContentLoaded', function() {
-      // Smooth scroll for navigation links
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-          
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
+    <h1 class="hero-title">Where Code Meets Creativity</h1>
 
-      // Logo click scrolls to top
-      document.querySelector('.nav-logo').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>why <strong>WebLet</strong> ?</h2>
+      <p><strong>➥ WebLet</strong> builds fast, responsive, visually striking websites.</p>
 
-      // Contact form submission
-      const contactForm = document.getElementById('contactForm');
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          // Get form values
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const subject = document.getElementById('subject').value;
-          const message = document.getElementById('message').value;
-          
-          // Here you would typically send the data to a server
-          // For now, just show an alert
-          alert(`Thank you ${name}! Your message has been sent. We'll contact you at ${email} soon.`);
-          
-          // Reset form
-          contactForm.reset();
-        });
-      }
+      <div class="image-wrapper" id="imageReveal">
+        <div class="image-track">
+          <img src="https://evisionthemes.com/wp-content/uploads/edd/2017/11/bizplus-free-responsive.png">
+          <img src="https://img.freepik.com/premium-photo/dark-mode-ui-design-mobile-app_1179475-25350.jpg">
+        </div>
+      </div>
 
-      /* ========= SCROLL REVEAL ========= */
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      }, { threshold: 0.9 });
+      <div class="about-grid">
+        <div class="about-card">⚡ High Performance</div>
+        <div class="about-card">📱 Fully Responsive</div>
+        <div class="about-card">🎨 Modern UI / UX</div>
+        <div class="about-card">🚀 Scalable Solutions</div>
+      </div>
+    </section>
 
-      observer.observe(document.getElementById("imageReveal"));
-    });
+    <!-- SERVICES -->
+    <section id="services" class="services-section">
+      <div class="services-container">
+        <h2 class="services-title">Our Services</h2>
+        <p class="services-subtitle">Professional digital solutions.</p>
+        <div class="services-grid">
+          <div class="service-card">Web Development</div>
+          <div class="service-card">UI / UX Design</div>
+          <div class="service-card">Responsive Design</div>
+          <div class="service-card">Figma to Code</div>
+          <div class="service-card">Performance Optimization</div>
+          <div class="service-card">Landing Pages</div>
+        </div>
+      </div>
+    </section>
 
-    /* ========= NAV BAR STYLE ON SCROLL ========= */
-    window.addEventListener('scroll', function() {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 100) {
-        nav.style.background = 'rgba(144, 139, 139, 0.2)';
-        nav.style.backdropFilter = 'blur(35px)';
-      } else {
-        nav.style.background = 'rgba(144, 139, 139, 0.1)';
-        nav.style.backdropFilter = 'blur(35px)';
-      }
-    });
-  </script>
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <h2 class="contact-title">Get In Touch</h2>
+      <p class="contact-subtitle">Let’s build something amazing.</p>
 
-  <style>
-    /* ============ BASE ============ */
-    body {
-      margin: 0;
-      background-color: #000000;
-      font-family: system-ui, sans-serif;
-      overflow-x: hidden;
-    }
+      <div class="contact-grid">
+        <div class="info-card">📧 rajasiddharthrajasiddharth@gmail.com</div>
+        <div class="info-card">📱 +91 7397725568</div>
+        <div class="info-card">📍 Coimbatore, Tamil Nadu</div>
+      </div>
 
-    html { scroll-behavior: smooth; }
+      <div class="social-links">
+        <a href="#" class="social-link">LinkedIn</a>
+        <a href="#" class="social-link">GitHub</a>
+        <a href="#" class="social-link">Instagram</a>
+      </div>
+    </section>
 
-    .grid-bg { min-height: 500vh; }
+  </div>
+</section>
 
-    /* ============ HERO ============ */
-    .hero {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+<script>
+const observer=new IntersectionObserver(e=>{
+  e.forEach(i=>i.isIntersecting&&i.target.classList.add("active"))
+},{threshold:.9});
+observer.observe(document.getElementById("imageReveal"));
+</script>
 
-    /* Titles */
-    .hero-title {
-      text-align: center;
-      font-size: clamp(34px, 6vw, 70px);
-      color: rgb(239, 246, 255);
-      font-family: Verdana;
-      text-shadow: 0 5px 500px #000000;
-      margin: 0 10px;
-    }
-
-    .hero-marquee marquee {
-      font-size: clamp(22px, 4vw, 60px);
-      color: #e5f1ff;
-    }
-
-    /* Paragraphs */
-    #para p {
-      text-align: center;
-      font-size: 17px;
-      color: #d3e4fe7a;
-    }
-
-    #para {
-      margin-top: 45px;
-    }
-
-    /* Marquees */
-    #marquees {
-      margin-top: 30px;
-      padding: 0 20px;
-    }
-
-    #marquees marquee {
-      font-size: clamp(14px, 2.5vw, 22px);
-      color: #e5f1ff;
-    }
-
-    /* ============ NAV ============ */
-    #nav {
-      position: sticky;
-      top: 25px;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
-    } 
-
-    nav {
-      display: flex;
-      align-items: center;
-      height: 65px;
-      padding: 0 40px 0 20px;
-      background: rgba(144, 139, 139, 0.1);
-      backdrop-filter: blur(35px);
-      border-radius: 15px;
-      border: 0.5px solid rgba(255, 255, 255, 0.082);
-      transition: all 0.3s ease;
-    }
-
-    #logo {
-      font-size: 20px;
-      color: #5288de;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #6c7480dc;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      padding: auto;
-      margin-left: 20px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #6997e1df;
-    }
-
-    /* ============ ABOUT ============ */
-    #about {
-      margin-top: 20px;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    #about h2 {
-      font-size: clamp(28px, 5v
+</body>
+</html>
